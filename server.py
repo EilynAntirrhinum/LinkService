@@ -86,6 +86,7 @@ def deleting_link():
 
 
 @app.route("/counting", methods=["POST", "GET"])
+@jwt_required(optional=True)
 def counting_by_redirect():
    return functions.counting(database, Links)
 
