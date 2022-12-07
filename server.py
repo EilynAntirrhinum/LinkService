@@ -71,21 +71,23 @@ def add_link_unauthed():
    return functions.add_link_unauth()
 
 
+# РАБОТАЕТ
 @app.route("/edit_link/<link>", methods=["POST", "GET"])
 @jwt_required()
 def editing_link(link):
    return functions.edit_link(database, Links, Users, link)
 
 
-@app.route("/delete_link/<link>", methods=["POST", "GET"])
+# РАБОТАЕТ
+@app.route("/delete_link", methods=["POST", "GET"])
 @jwt_required()
-def deleting_link(link):
-   return functions.delete_link(database, Links, Users, link)
+def deleting_link():
+   return functions.delete_link(database, Links, Users)
 
 
-@app.route("/counting/<link>", methods=["POST", "GET"])
-def counting_by_redirect(link):
-   return functions.counting(database, Links, link)
+@app.route("/counting", methods=["POST", "GET"])
+def counting_by_redirect():
+   return functions.counting(database, Links)
 
 
 if __name__ == "__main__":

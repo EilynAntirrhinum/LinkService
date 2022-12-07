@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "f882fe13-afef-452a-8d4b-a86a6ae624e7",
+		"name": "LinkService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23338231"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\" : \"qwerty2\",\r\n    \"password\" : \"qwerty2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/register_user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\" : \"qwerty2\",\r\n    \"password\" : \"qwerty2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/auth_user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"auth_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Link AUTHED",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MDM0NjQ1OSwianRpIjoiZDg2ZWViYTAtOTEzMS00Y2JlLWJmMTMtZTg5MmM1YzIyMDgzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InF3ZXJ0eTIiLCJuYmYiOjE2NzAzNDY0NTksImV4cCI6MTY3MDM0NzM1OX0.lwvhBYSlj_Oc36jXlNHKHrrUOixQhf6Lq9tQDy4zSAY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"long_link\" : \"https://drive.google.com/file/d/15uYNtO1coVKRfpUkEixBnRvGKbTeeKm0/view\",\r\n    \"alias\": \"LINK_2\",\r\n    \"access\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_link_authed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_link_authed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Link UNAUTHED",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"long_link\" : \"https://www.google.com/search?q=working+outside+of+application+context+python+flask&sxsrf=ALiCzsZlMwQHf581SKJOKK4nOK5Dr1c9kg%3A1669182063686&ei=b7J9Y9XBKZ69xc8PvIKciAM&ved=0ahUKEwiVteLfy8P7AhWeXvEDHTwBBzEQ4dUDCA8&uact=5&oq=working+outside+of+application+context+python+flask&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBggAEBYQHjoKCAAQRxDWBBCwA0oECEEYAEoECEYYAFDxAViFB2DdDGgBcAF4AIAB6gGIAbAJkgEFMC41LjGYAQCgAQHIAQjAAQE&sclient=gws-wiz-serp\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_link_unauthed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_link_unauthed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Link",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MDM0NDkxMywianRpIjoiMzM0NDUyYjMtNmRjZS00ZjJmLTgyZWMtYzVjMWQyM2QyMjdmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InF3ZXJ0eTEiLCJuYmYiOjE2NzAzNDQ5MTMsImV4cCI6MTY3MDM0NTgxM30.8SLroNhrZPdTMU1GN2Pj6u8CrzZTf6SFVW8ztVbKS04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"access_level\" : 2,\r\n   \"alias\" : \"to_delete_alo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/edit_link/dad2ed23443",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"edit_link",
+						"dad2ed23443"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Link",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MDM0NjM2MywianRpIjoiNmE0ODgxMjQtNDhmMi00OGY2LTk0ZjEtNjc1NjFhOGQ4MDU0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InF3ZXJ0eTEiLCJuYmYiOjE2NzAzNDYzNjMsImV4cCI6MTY3MDM0NzI2M30.D0ishKZjpn-JWi8iVjGfXyCYZbQHkpEI1eLoenSLXME",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_link\" : \"a7b4910b6\",\r\n    \"alias\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/delete_link",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"delete_link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Counting",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY3MDM0NTQ4OCwianRpIjoiNGFlYzliYTMtZTczOS00OWI1LTg2MGMtZjBjMzA0YzVlOGZjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InF3ZXJ0eTEiLCJuYmYiOjE2NzAzNDU0ODgsImV4cCI6MTY3MDM0NjM4OH0.jD4P9J3nay4VKQhu5l6hrBl60q6unfr-itaLPKLTS6c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"short_link\" : \"\",\r\n    \"alias\" : \"LINK_2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/counting",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"counting"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
